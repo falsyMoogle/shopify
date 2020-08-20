@@ -1,9 +1,12 @@
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-// vars
+// vars + base
 @import './variables';
+@import './base';
 // import styles
+@import './layout/utils/Container.scss';
 @import './components/Header.scss';
+@import './components/LoginForm.scss';
 // reset + base
 * {
 	padding: 0;
@@ -26,11 +29,24 @@ a {
 	text-decoration: none;
 }
 
+input {
+	outline: none;
+}
+
 .app {
 	position: relative;
 	width: 100%;
 	height: 100vh;
 	background-color: var(--gray-200);
+
+	&__content {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: $header-height;
+	}
 }
 
 :root {
@@ -38,4 +54,6 @@ a {
 	--gray-200: #edeef0;
 	--gray-400: #939393;
 	--blue-400: #4a76a8;
+	--green-200: #31f074;
+	--green-400: #1ed760;
 }

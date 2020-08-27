@@ -6,6 +6,7 @@
 // import styles
 @import './layout/utils/Container.scss';
 @import './components/Header.scss';
+@import './layout/Sidebar.scss';
 @import './components/LoginForm.scss';
 // reset + base
 * {
@@ -34,7 +35,6 @@ input {
 }
 
 .app {
-	position: relative;
 	width: 100%;
 	height: 100vh;
 	background-color: var(--gray-200);
@@ -51,6 +51,7 @@ input {
 
 :root {
 	--white: #ffffff;
+	--black: #000000;
 	--gray-200: #edeef0;
 	--gray-400: #939393;
 	--blue-400: #4a76a8;

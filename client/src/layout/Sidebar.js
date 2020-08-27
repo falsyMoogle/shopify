@@ -32,7 +32,7 @@ const Sidebar = () => {
 				in={sidebarOpen}
 				unmountOnExit
 				classNames='menu'
-				timeout={500}
+				timeout={400}
 			>
 				<nav className='sidebar' ref={sidebarNode}>
 					<ul className='sidebar__list'>

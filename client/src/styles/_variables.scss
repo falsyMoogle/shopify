@@ -1,1 +1,15 @@
-$header-height: 3rem;
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--gray-200: #edeef0;
+	--gray-400: #939393;
+	--blue-400: #4a76a8;
+	--green-200: #31f074;
+	--green-400: #1ed760;
+
+	--header-height: 3rem;
+
+	// animation
+	--speed-200: 0.2s;
+	--speed-400: 0.4s;
+}

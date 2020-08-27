@@ -11,8 +11,10 @@
 	z-index: 100;
 
 	&__profile {
+		display: flex;
+		align-items: center;
 		&-notification {
-			margin-right: 1.5rem;
+			margin-right: 0.5rem;
 		}
 	}
 }

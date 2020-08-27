@@ -1,5 +1,7 @@
 import React from 'react'
+
 import Sidebar from '../layout/Sidebar'
+import IconButton from '../layout/utils/IconButton'
 
 const Header = () => {
 	return (
@@ -10,7 +12,7 @@ const Header = () => {
 			</h2>
 			<div className='app__header__profile'>
 				<span className='app__header__profile-notification'>
-					<i className='far fa-bell'></i>
+					<IconButton icon={'far fa-bell'} />
 				</span>
 				<span>Current user</span>
 			</div>

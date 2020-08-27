@@ -3,8 +3,11 @@
 // vars + base
 @import './variables';
 @import './base';
-// import styles
+// utils styles
 @import './layout/utils/Container.scss';
+@import './layout/utils/IconButton.scss';
+// import styles
+@import './components/App.scss';
 @import './components/Header.scss';
 @import './layout/Sidebar.scss';
 @import './components/LoginForm.scss';
@@ -13,6 +16,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -30,23 +34,10 @@ a {
 	text-decoration: none;
 }
 
-input {
+input,
+button:focus,
+input[type='button']:focus {
 	outline: none;
-}
-
-.app {
-	width: 100%;
-	height: 100vh;
-	background-color: var(--gray-200);
-
-	&__content {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-top: $header-height;
-	}
 }
 
 :root {

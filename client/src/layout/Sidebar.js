@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group'
 import { useOnClickOutside } from '../hooks/hooks'
 
 import FlatIcon from './utils/FlatIcon'
+import IconButton from './utils/IconButton'
 
 const Sidebar = () => {
 	const componentNode = useRef(null)
@@ -22,9 +23,9 @@ const Sidebar = () => {
 	useOnClickOutside(componentNode, clickOutside)
 	return (
 		<div ref={componentNode}>
-			<span onClick={sidebarHandler}>
-				<i className='sidebar-button fas fa-align-justify'></i>
-			</span>
+			<IconButton onClick={sidebarHandler}>
+				<i className='fas fa-align-justify'></i>
+			</IconButton>
 
 			<CSSTransition
 				nodeRef={sidebarNode}

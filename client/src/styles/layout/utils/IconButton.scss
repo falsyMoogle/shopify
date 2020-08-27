@@ -1,0 +1,14 @@
+.icon-btn {
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 99px;
+	transition: 0.2s ease;
+	cursor: pointer;
+	// hover
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+}

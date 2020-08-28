@@ -7,18 +7,10 @@ import FlatIcon from './utils/FlatIcon'
 import IconButton from './utils/IconButton'
 import UserInfo from './UserInfo'
 
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
 	const componentNode = useRef(null)
 	const sidebarNode = useRef(null)
 	const [sidebarOpen, setSidebarOpen] = useState(false)
-
-	const [testUser] = useState({
-		name: 'Nikolay Nazarov',
-		email: 'nazarov-test@gmail.com',
-		role: 'user',
-		shop: 'Vosstaniya',
-		profileImg: '',
-	})
 
 	// close sidebar when click outside of navitem
 	const clickOutside = () => {
@@ -44,7 +36,7 @@ const Sidebar = () => {
 				timeout={400}
 			>
 				<nav className='sidebar' ref={sidebarNode}>
-					<UserInfo user={testUser} />
+					<UserInfo user={user} />
 
 					<ul className='sidebar__list'>
 						<li className='sidebar__list__item'>

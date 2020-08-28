@@ -5,12 +5,14 @@
 @import './base';
 // utils styles
 @import './layout/utils/Container.scss';
+@import './layout/utils/Avatar.scss';
 @import './layout/utils/IconButton.scss';
 // import styles
 @import './components/App.scss';
 @import './components/Header.scss';
-@import './layout/Sidebar.scss';
 @import './components/LoginForm.scss';
+@import './layout/Sidebar.scss';
+@import './layout/UserInfo.scss';
 // reset + base
 * {
 	padding: 0;

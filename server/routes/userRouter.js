@@ -4,12 +4,19 @@ const jwt = require('jsonwebtoken')
 // middlewares
 const auth = require('../middleware/auth')
 // models
-const User = require('../models/userModel')
+const User = require('../models/User')
 
 // register
 router.post('/register', async (req, res) => {
 	try {
-		let { email, password, passwordCheck, displayName, shopName } = req.body
+		let {
+			email,
+			password,
+			passwordCheck,
+			displayName,
+			role,
+			shopName,
+		} = req.body
 		const existingUser = await User.findOne({ email: email })
 
 		// validation
@@ -33,7 +40,9 @@ router.post('/register', async (req, res) => {
 
 		if (!displayName) displayName = email
 
-		// crypting password by bcrypt
+		if (!role) role = 'User'
+
+		// crypting password
 		const salt = await bcrypt.genSalt()
 		const passwordHash = await bcrypt.hash(password, salt)
 
@@ -43,6 +52,7 @@ router.post('/register', async (req, res) => {
 			shopName,
 			password: passwordHash,
 			displayName,
+			role,
 		})
 		const savedUser = await newUser.save()
 		// send user data to frontend

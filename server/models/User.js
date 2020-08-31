@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
 	displayName: {
 		type: String,
 	},
+	role: {
+		type: String,
+	},
 })
 
 module.exports = User = mongoose.model('user', userSchema)

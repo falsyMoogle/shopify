@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 import { CSSTransition } from 'react-transition-group'
 import { useOnClickOutside } from '../hooks/hooks'
@@ -39,18 +40,14 @@ const Sidebar = ({ user }) => {
 					<UserInfo user={user} />
 
 					<ul className='sidebar__list'>
-						<li className='sidebar__list__item'>
+						<Link to='/' className='sidebar__list__item'>
 							<FlatIcon icon='fas fa-box-open' />
-							<span className='sidebar__list__item-text'>NavLink 1</span>
-						</li>
-						<li className='sidebar__list__item'>
+							<span className='sidebar__list__item-text'>Home</span>
+						</Link>
+						<Link to='/additems' className='sidebar__list__item'>
 							<FlatIcon icon='fas fa-box-open' />
-							<span className='sidebar__list__item-text'>NavLink 2</span>
-						</li>
-						<li className='sidebar__list__item'>
-							<FlatIcon icon='fas fa-box-open' />
-							<span className='sidebar__list__item-text'>NavLink 3</span>
-						</li>
+							<span className='sidebar__list__item-text'>Expire items</span>
+						</Link>
 					</ul>
 				</nav>
 			</CSSTransition>

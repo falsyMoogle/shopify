@@ -1,16 +1,27 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+// Components
 import Header from './components/Header'
-import LoginForm from './components/LoginForm'
+// Pages
+import Home from './Pages/Home'
+import Login from './Pages/Login'
+import MenageItems from './Pages/AddItems'
 
 function App() {
 	return (
-		<div className='app'>
-			<Header />
-			<div className='app__content'>
-				<LoginForm />
+		<Router>
+			<div className='app'>
+				<Header />
+				<div className='app__content'>
+					<Switch>
+						<Route path='/' component={Home} exact />
+						<Route path='/additems' component={MenageItems} />
+						<Route path='/login' component={Login} />
+					</Switch>
+				</div>
 			</div>
-		</div>
+		</Router>
 	)
 }
 

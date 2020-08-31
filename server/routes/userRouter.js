@@ -83,7 +83,7 @@ router.post('/login', async (req, res) => {
 		if (!isMatch) return res.status(400).json({ msg: 'Invalid credencials' })
 
 		// set up jwt
-		const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN)
+		const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
 		res.json({
 			token,
 			user: {
@@ -113,7 +113,7 @@ router.post('/tokenIsValid', async (req, res) => {
 		const token = req.header('x-auth-token')
 		if (!token) return res.json(false)
 
-		const verified = jwt.verify(token, process.env.JWT_TOKEN)
+		const verified = jwt.verify(token, process.env.JWT_SECRET)
 		if (!verified) return res.json(false)
 
 		const user = await User.findById(verified.id)
@@ -125,6 +125,7 @@ router.post('/tokenIsValid', async (req, res) => {
 	}
 })
 
+// Get rigestred user
 router.get('/', auth, async (req, res) => {
 	try {
 		const user = await User.findById(req.user)

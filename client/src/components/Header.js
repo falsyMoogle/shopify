@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import Sidebar from '../layout/Sidebar'
 import IconButton from '../layout/utils/IconButton'
@@ -6,7 +7,7 @@ import IconButton from '../layout/utils/IconButton'
 const Header = () => {
 	const [testUser] = useState({
 		name: 'Nikolay Nazarov',
-		email: 'nazarov-test@gmail.comadsadsdadsasadsadsasadasdsads',
+		email: 'nazarov-test@gmail.com',
 		role: 'user',
 		shop: 'Vosstaniya',
 		profileImg: '',
@@ -16,7 +17,7 @@ const Header = () => {
 		<header className='app__header'>
 			<Sidebar user={testUser} />
 			<h2 className='app__header-brand'>
-				<a href='/'>Shopify</a>
+				<Link to='/'>Shopify</Link>
 			</h2>
 			<div className='app__header__profile'>
 				<span className='app__header__profile-notification'>
